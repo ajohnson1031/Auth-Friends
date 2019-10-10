@@ -144,6 +144,9 @@ a {
 .App .link-container {
   padding: 50px;
 }
+.App .home-header {
+  font-size: 3.2rem;
+}
 form {
   display: flex;
   flex-direction: column;
@@ -180,6 +183,31 @@ form .err {
   color: #990000;
   margin-top: 10px;
   border: 2px solid #990000;
+}
+.horz-form {
+  background-color: transparent;
+  flex-direction: row;
+}
+.horz-form input {
+  margin: 0 5px 0;
+}
+.horz-form button {
+  padding: 8px 12px;
+}
+.friends-container {
+  background-color: #f6f6f6;
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  border-radius: 8px;
+}
+.friends-container .ui.card.friend-card {
+  margin: 0 10px 15px;
+}
+.friends-container .e {
+  font-size: 1rem;
+  padding: 0;
 }
 .loader {
   color: #ffffff;

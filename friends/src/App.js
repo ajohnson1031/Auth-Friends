@@ -2,6 +2,7 @@ import React from "react";
 import { Link, Route, Redirect } from "react-router-dom";
 import { Icon } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
+import Home from "components/Home";
 import LoginForm from "components/LoginForm";
 import FriendsList from "components/FriendsList";
 
@@ -28,7 +29,7 @@ function App() {
         <Link to="/login">Login</Link>
         <Link to="/friendslist">Friends List</Link>
       </div>
-      <Route path="/" />
+      <Route exact path="/" component={Home} />
       <Route path="/login" component={LoginForm} />
       <PrivateRoute path="/friendslist" component={FriendsList} />
     </div>

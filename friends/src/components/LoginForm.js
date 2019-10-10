@@ -39,7 +39,7 @@ const LoginForm = props => {
     <>
       {isLoading && <div className="loader" />}
       <form>
-        <h4>Login Form</h4>
+        <h4>Login:</h4>
         <input
           type="text"
           name="username"
