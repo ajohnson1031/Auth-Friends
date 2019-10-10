@@ -147,6 +147,45 @@ a {
 .App .home-header {
   font-size: 3.2rem;
 }
+.App .err {
+  width: auto;
+  padding: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: #ffcccc;
+  color: #990000;
+  margin: 10px 0;
+  border: 2px solid #990000;
+  border-radius: 4px;
+}
+.App .success {
+  width: auto;
+  padding: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: #cdffcd;
+  color: green;
+  margin: 10px 0;
+  border: 2px solid green;
+  border-radius: 4px;
+}
+.App .warning {
+  width: auto;
+  padding: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: #ffffcc;
+  color: #999900;
+  margin: 10px 0;
+  border: 2px solid #b2b300;
+  border-radius: 4px;
+}
 form {
   display: flex;
   flex-direction: column;
@@ -171,22 +210,12 @@ form button {
   font-weight: 600;
   color: white;
   cursor: pointer;
-}
-form .err {
-  width: 100%;
-  padding: 12px 0;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.8rem;
-  font-weight: bold;
-  text-align: center;
-  background-color: #ffcccc;
-  color: #990000;
-  margin-top: 10px;
-  border: 2px solid #990000;
+  border-radius: 2px;
 }
 .horz-form {
   background-color: transparent;
   flex-direction: row;
+  padding: 10px;
 }
 .horz-form input {
   margin: 0 5px 0;
@@ -199,11 +228,24 @@ form .err {
   padding: 30px;
   display: flex;
   flex-wrap: wrap;
-  width: 90%;
+  width: auto;
   border-radius: 8px;
+  max-width: 990px;
 }
 .friends-container .ui.card.friend-card {
-  margin: 0 10px 15px;
+  margin: 10px 10px;
+}
+.friends-container .ui.card.friend-card .edit-icons {
+  position: absolute;
+  right: 5px;
+  font-size: 0.85rem;
+}
+.friends-container .ui.card.friend-card .edit-icons .edit {
+  color: slategray;
+  cursor: pointer;
+}
+.friends-container .ui.card.friend-card .edit-icons .edit:hover {
+  color: dodgerblue;
 }
 .friends-container .e {
   font-size: 1rem;
