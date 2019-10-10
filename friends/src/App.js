@@ -5,7 +5,11 @@ import LoginForm from "components/LoginForm";
 function App() {
   return (
     <div className="App">
-      <Link to="/login">Login</Link>
+      <div className="link-container">
+        <Link to="/">Home</Link>
+        <Link to="/login">Login</Link>
+      </div>
+      <Route path="/" />
       <Route path="/login" component={LoginForm} />
     </div>
   );
