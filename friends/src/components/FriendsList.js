@@ -1,17 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AddForm from "./AddForm";
 import { axiosWithAuth } from "data/axiosAuth";
 import { Card, Icon } from "semantic-ui-react";
 
-const FriendsList = () => {
+const FriendsList = props => {
   const [friends, setFriends] = useState(null);
   const [errors, setErrors] = useState(null);
   const [status, setStatus] = useState(null);
 
-  axiosWithAuth()
-    .get("http://localhost:5000/api/friends")
-    .then(res => setFriends(res.data))
-    .catch(() => setErrors("Sorry. You have no friends."));
+  useEffect(() => {
+    axiosWithAuth()
+      .get("http://localhost:5000/api/friends")
+      .then(res => {
+        setFriends(res.data);
+      })
+      .catch(() => setErrors("Sorry. You have no friends."));
+  }, [status]);
 
   const deleteFriend = id => {
     axiosWithAuth()
@@ -28,7 +32,7 @@ const FriendsList = () => {
   return (
     <>
       {" "}
-      <AddForm setStatus={setStatus} />
+      <AddForm setStatus={setStatus} setFriends={setFriends} />
       {errors && <div className="err">{errors}</div>}
       {status && <div className="warning">{status}</div>}
       <div className="friends-container">
@@ -41,7 +45,11 @@ const FriendsList = () => {
                   <Icon name="user" />
                   {friend.name}
                   <span className="edit-icons">
-                    <Icon className="edit" name="pencil" />
+                    <Icon
+                      className="edit"
+                      name="pencil"
+                      onClick={() => props.history.push(`/edit/${friend.id}`)}
+                    />
                     <Icon
                       className="edit"
                       name="close"

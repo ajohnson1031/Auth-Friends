@@ -5,6 +5,7 @@ import "semantic-ui-css/semantic.min.css";
 import Home from "components/Home";
 import LoginForm from "components/LoginForm";
 import FriendsList from "components/FriendsList";
+import EditFriend from "components/EditFriend";
 
 function App() {
   const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -32,6 +33,7 @@ function App() {
       <Route exact path="/" component={Home} />
       <Route path="/login" component={LoginForm} />
       <PrivateRoute path="/friendslist" component={FriendsList} />
+      <PrivateRoute path="/edit/:id" component={EditFriend} />
     </div>
   );
 }

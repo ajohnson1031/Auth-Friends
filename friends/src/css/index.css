@@ -135,6 +135,9 @@ a {
   padding: 10px 12px;
   color: white;
 }
+a:hover {
+  text-decoration: underline !important;
+}
 .App {
   display: flex;
   justify-content: center;
@@ -223,14 +226,17 @@ form button {
 .horz-form button {
   padding: 8px 12px;
 }
+.edit-form {
+  width: 300px;
+}
 .friends-container {
   background-color: #f6f6f6;
   padding: 30px;
   display: flex;
   flex-wrap: wrap;
-  width: auto;
   border-radius: 8px;
   max-width: 990px;
+  margin-top: 10px;
 }
 .friends-container .ui.card.friend-card {
   margin: 10px 10px;

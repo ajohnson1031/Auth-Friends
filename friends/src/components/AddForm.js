@@ -31,7 +31,8 @@ const AddForm = props => {
             email: value.emailText,
             id: new Date().getTime()
           })
-          .then(res =>
+          .then(res => {
+            props.setFriends(res.data);
             setValue({
               ...value,
               friendText: "",
@@ -39,8 +40,8 @@ const AddForm = props => {
               emailText: "",
               err: null,
               status: res.status
-            })
-          );
+            });
+          });
   };
 
   return (
